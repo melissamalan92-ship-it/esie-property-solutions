@@ -2,6 +2,8 @@
 
 Skeleton website built with Next.js (App Router), TypeScript, Tailwind CSS and shadcn/ui.
 
+Live at https://esiepropertysolutions.com
+
 ## Develop
 
 ```bash
@@ -19,6 +21,10 @@ npx shadcn@latest add <component>
 
 ## Deploy
 
-Every push to `main` builds a static export and publishes it to GitHub Pages through `.github/workflows/deploy.yml`.
+The site is hosted on Netlify, configured in `netlify.toml`. Pushing to GitHub does not deploy it yet. From a machine logged in to the Netlify account and linked to the project, run:
 
-GitHub Pages only hosts static files, so server features such as API routes and server actions won't work there.
+```bash
+netlify deploy --build --prod
+```
+
+DNS is managed in Cloudflare. Keep the website's `A` and `www` `CNAME` records set to DNS only.
