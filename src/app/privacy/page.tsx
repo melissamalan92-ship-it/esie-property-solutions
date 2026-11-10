@@ -4,11 +4,6 @@ export const metadata = esieMetadata("privacy");
 
 const email = "info@esiepropertysolutions.com";
 
-/** Details still to be confirmed by ESIE, highlighted so they cannot be missed. */
-function Fill({ children }: { children: string }) {
-  return <mark className="ph-fill">{`[${children}]`}</mark>;
-}
-
 function Mail() {
   return <a href={`mailto:${email}`}>{email}</a>;
 }
@@ -21,7 +16,7 @@ export default function Page() {
           <div className="wrap">
             <h1>Privacy policy</h1>
             <p className="pv-date">
-              Last updated <Fill>date of publishing</Fill>
+              Last updated 10 November 2026
             </p>
             <p className="lede">
               This policy explains how ESIE Property Solutions (“ESIE”, “we”)
@@ -34,14 +29,12 @@ export default function Page() {
             <div className="pv-body">
               <h2>Who we are</h2>
               <p>
-                ESIE Property Solutions is{" "}
-                <Fill>registered company name and registration number</Fill>,
-                based at <Fill>business address</Fill>, Cape Town, South Africa.
+                ESIE Property Solutions is based in Cape Town, South Africa.
                 You can reach us at <Mail />.
               </p>
               <p>
-                Our Information Officer is <Fill>name</Fill>, who you can
-                contact at the same address about anything in this policy.
+                Our Information Officer is Melissa Malan, who you can contact
+                at the same email address about anything in this policy.
               </p>
 
               <h2>What we collect</h2>
@@ -79,13 +72,9 @@ export default function Page() {
 
               <h2>Sharing with our professional partners</h2>
               <p>
-                We share your details with partners such as{" "}
-                <Fill>
-                  {
-                    "confirm: estate agents, attorneys, conveyancers, financial and tax specialists"
-                  }
-                </Fill>{" "}
-                only when it is needed for a service you have asked for, and we
+                We share your details with partners such as estate agents,
+                attorneys, conveyancers, and financial and tax specialists only
+                when it is needed for a service you have asked for, and we
                 tell you before we do. Each partner is responsible for handling
                 your information under its own legal obligations.
               </p>
@@ -103,10 +92,9 @@ export default function Page() {
 
               <h2>How long we keep it</h2>
               <p>
-                Enquiries that do not lead to further work are deleted after{" "}
-                <Fill>for example 12 months</Fill>. Records of services we
-                coordinate are kept for <Fill>for example 5 years</Fill> after
-                the work ends, where South African law requires it.
+                Enquiries that do not lead to further work are deleted after 12
+                months. Records of services we coordinate are kept for 5 years
+                after the work ends, where South African law requires it.
               </p>
 
               <h2>Your rights</h2>
@@ -116,7 +104,7 @@ export default function Page() {
                 or withdraw your consent at any time. If you are in the UK or
                 EU, you can also ask us to restrict how we use it or to send you
                 a copy in a portable format. Email <Mail /> and we will reply
-                within <Fill>for example 30 days</Fill>.
+                within 15 days.
               </p>
               <p>
                 If you are unhappy with how we have handled your information,
