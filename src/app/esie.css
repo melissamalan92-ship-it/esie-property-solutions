@@ -996,8 +996,8 @@ footer{background:var(--dk2);color:var(--on-dk);overflow:hidden}
 .ab2 .ab2-grid h3{transition:transform .6s var(--ease)}
 .ab2 .ab2-grid>div:hover h3{transform:translateX(6px)}
 @media (prefers-reduced-motion:reduce){.ab2 .ab2-grid>div::before{transform:scaleX(1)}}
-.ab1-img img{transform:scale(1.08);animation:abpan 22s ease-in-out infinite alternate}
-@keyframes abpan{from{transform:scale(1.08) translateX(-2.2%)}to{transform:scale(1.08) translateX(2.2%)}}
+.ab1-img img{transform:scale(1.12);animation:abpan 16s ease-in-out infinite alternate}
+@keyframes abpan{from{transform:scale(1.12) translateX(-4%)}to{transform:scale(1.12) translateX(4%)}}
 @media (prefers-reduced-motion:reduce){.ab1-img img{animation:none}}
 .fq-ans{background:var(--sage);color:var(--on-dk)}
 .fq-ans .k{color:var(--sand)}
