@@ -1172,3 +1172,6 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 /* Curtain held down while a page loads after a transition (see layout head script) */
 .curtain-cover .curtain{transform:none!important;transition:none!important}
 .curtain-cover .curtain .logo{opacity:1;transition:none}
+
+/* Explore: show only the place name on the photo, not the count */
+#cap span{display:none!important}

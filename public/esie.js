@@ -97,13 +97,14 @@ const IMGSPOTS={
  capedutch:{iw:1536,ih:1024,s:[[.5,.4,'Cape Dutch homes','Historic gabled homesteads.'],[.74,.3,'Mountain views','Peaks on every side of the town.'],[.42,.8,'Oak-lined streets','Shaded avenues in the historic centre.']]},
  estate:{iw:1536,ih:1024,s:[[.5,.1,'Mountain valley','A valley ringed by peaks.'],[.72,.3,'Vineyards','Wine estates across the valley floor.'],[.5,.65,'Estate living','Homesteads with gardens and pools.']]},
  vinepool:{iw:1536,ih:1024,s:[[.5,.5,'Vineyards','Historic estates across the Winelands valleys.'],[.5,.85,'Estate living','Farms and secure estates with room to breathe.']]},
+ interior:{iw:1536,ih:1024,s:[[.55,.22,'Mountain slopes','Homes tucked beneath the slopes of Table Mountain.'],[.72,.55,'Garden living','Light, open homes that open onto the garden.'],[.3,.62,'Quiet & private','Leafy, secluded streets above the city.']]},
  lagoon:{iw:1536,ih:1024,s:[[.6,.4,'Ocean views','Long views out across the bay.'],[.45,.53,'The lagoon','Calm water for swimming and paddling.'],[.4,.78,'Coastal calm','Homes built for slow days.']]}
 };
 const P_=(name,sub,ll,img,chips)=>({name,sub,ll,img,iw:IMGSPOTS[img].iw,ih:IMGSPOTS[img].ih,spots:IMGSPOTS[img].s,chips});
 const spotsData=[
  P_('City Bowl','City Bowl & V&A Waterfront',[18.42,-33.925],'wf2',['Harbour living','Walkable','Table Mountain views']),
  P_('Tamboerskloof','Tamboerskloof',[18.408,-33.93],'pan1',['Leafy streets','Character homes','Close to the city']),
- P_('Higgovale','Higgovale',[18.404,-33.94],'lion',['Mountain slopes','Quiet & private','City views']),
+ P_('Higgovale','Higgovale',[18.404,-33.94],'interior',['Mountain slopes','Quiet & private','City views']),
  P_('Blouberg','Bloubergstrand',[18.468,-33.81],'blouberg',['Beachfront','Postcard views','Kitesurfing']),
  P_('Sea Point','Sea Point Promenade',[18.386,-33.914],'oceanroom',['The Promenade','Walkable','Ocean front']),
  P_('Fresnaye','Fresnaye',[18.384,-33.924],'fresnaye',['Sunset views','Residential','Close to Sea Point']),
