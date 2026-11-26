@@ -4,28 +4,28 @@ import { faqs } from "./esie-content";
 export const esieSeo = {
   "home": {
     "path": "/",
-    "title": "Buying Property in Cape Town from Abroad | ESIE Property Solutions",
-    "description": "Buying property in Cape Town from abroad? ESIE guides international buyers through the legal, tax, finance and property steps, from start to finish."
+    "title": "Buy Property in Cape Town from Abroad | ESIE",
+    "description": "Buying in Cape Town from abroad? ESIE coordinates the agent, bank, attorney, tax and money transfers for international buyers, from first call to keys."
   },
   "about": {
     "path": "/about",
-    "title": "About ESIE | Helping International Buyers Purchase in Cape Town",
-    "description": "ESIE Property Solutions is a Cape Town service built for people buying South African property from abroad, coordinating every part of the purchase."
+    "title": "About ESIE | Cape Town Property Help for Buyers Abroad",
+    "description": "ESIE is a Cape Town service for people buying South African property from abroad, coordinating the agent, bank, attorney and tax for you."
   },
   "services": {
     "path": "/services",
-    "title": "Services for International Property Buyers in South Africa | ESIE",
-    "description": "Finding the right home, non-resident finance, legal and transfer support, ownership structures, repatriation of funds, tax and accounting: choose only the support you need."
+    "title": "Services for Foreign Property Buyers in Cape Town | ESIE",
+    "description": "Property search, non-resident mortgages, ownership structures, legal and transfer, moving money, tax and accounting. Choose only what you need."
   },
   "explore": {
     "path": "/explore",
-    "title": "Where to Buy Property in Cape Town: Areas to Explore | ESIE",
-    "description": "Explore Cape Town’s neighbourhoods and lifestyles, from the Atlantic Seaboard to the Winelands, with guidance for buyers purchasing from abroad."
+    "title": "Where to Buy Property in Cape Town: 19 Areas | ESIE",
+    "description": "From Sea Point and Camps Bay to Stellenbosch and Hermanus: 19 places international buyers look at in Cape Town and the Winelands."
   },
   "faq": {
     "path": "/faq",
-    "title": "Buying Property in South Africa as a Foreigner: FAQs | ESIE",
-    "description": "Answers for international buyers on purchasing property in South Africa, including the buying process, moving money, tax and ownership."
+    "title": "Buying Property in South Africa as a Foreigner: FAQs",
+    "description": "Can foreigners buy in South Africa? Mortgages, buying remotely, costs, moving money and tax: straight answers for international buyers."
   },
   "contact": {
     "path": "/contact",

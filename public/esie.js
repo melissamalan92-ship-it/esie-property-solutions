@@ -1,4 +1,4 @@
-window.__ESIE_T={"home": "Buying Property in Cape Town from Abroad | ESIE Property Solutions", "about": "About ESIE | Helping International Buyers Purchase in Cape Town", "services": "Services for International Property Buyers in South Africa | ESIE", "explore": "Where to Buy Property in Cape Town: Areas to Explore | ESIE", "faq": "Buying Property in South Africa as a Foreigner: FAQs | ESIE", "contact": "Contact ESIE | Request a Call About Buying in Cape Town", "privacy": "Privacy Policy | ESIE Property Solutions"};
+/* Page titles come from each page itself (src/app/esie-seo.ts) */
 (function(){/* Each page now comes from the server with only its own content (better for search engines); links to other pages load them behind the curtain */})();
 
 (function(){
@@ -339,7 +339,7 @@ function render(v){
   $$(`[data-view="${v}"] .ln>span, [data-view="${v}"] .fade-up`).forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation=''});
   current=v;scrollTo(0,0);measure();tick();armReveal();if(v==='home'&&typeof sizeCv==='function')setTimeout(sizeCv,30);if(v==='contact')setTimeout(placeCtLogo,40);$('.fcta').hidden=(v!=='home');if(v==='explore'){if(pendingPlace!==null){show(pendingPlace);pendingPlace=null}else start=performance.now();setTimeout(placeSpots,50)}
 }
-function go(){let v=location.pathname.replace(/\/+$/,'').slice(1)||'home';if(!views.includes(v))v='home';if(window.__ESIE_T[v])document.title=window.__ESIE_T[v];closeMenu();
+function go(){let v=location.pathname.replace(/\/+$/,'').slice(1)||'home';if(!views.includes(v))v='home';closeMenu();
   if(current===null||reduce){render(v);return}
   if(v===current){scrollTo({top:0,behavior:'smooth'});return}
   if(busy)return;busy=true;curtain.className='curtain in';
