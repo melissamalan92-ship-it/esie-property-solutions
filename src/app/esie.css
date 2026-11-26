@@ -1175,3 +1175,6 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 
 /* Explore: show only the place name on the photo, not the count */
 #cap span{display:none!important}
+
+/* Services cards and FAQ answers are all in the page for search engines; only the chosen ones show */
+#pkCard>.pk-in[hidden],#fqList>li[hidden]{display:none}

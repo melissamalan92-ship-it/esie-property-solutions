@@ -288,7 +288,10 @@ if($('#pkGrid')){
   const order=[0,1,3,2,4,5,6];
   $('#pkGrid').setAttribute('role','tablist');
   $('#pkGrid').innerHTML=order.map((i,k)=>`<button type="button" class="pkc" role="tab" aria-selected="false" data-i="${i}"><span class="n">${String(k+1).padStart(2,'0')}</span>${short[i]}</button>`).join('');
-  const show=i=>{$$('#pkGrid .pkc').forEach(b=>b.setAttribute('aria-selected',+b.dataset.i===i));const v=services[i];const c=$('#pkCard');
+  const show=i=>{$$('#pkGrid .pkc').forEach(b=>b.setAttribute('aria-selected',+b.dataset.i===i));
+    /* The server puts every card in the page (for search engines); show the chosen one */
+    const cards=$$('#pkCard>.pk-in[data-i]');if(cards.length){cards.forEach(c=>{const on=+c.dataset.i===i;c.hidden=!on;if(on){c.style.animation='none';void c.offsetWidth;c.style.animation=''}});return}
+    const v=services[i];const c=$('#pkCard');
     c.style.animation='none';void c.offsetWidth;c.style.animation='';
     c.innerHTML=`<h3>${v.t}</h3><p>${v.s}</p><ul>${v.l.map(x=>`<li>${x}</li>`).join('')}</ul>`};
   $('#pkGrid').addEventListener('click',e=>{const b=e.target.closest('.pkc');if(b)show(+b.dataset.i)});
@@ -312,7 +315,10 @@ if($('#fqTabs')){
   const pick=(k,anim)=>{qi=k;$$('#fqList button').forEach(b=>b.setAttribute('aria-current',+b.dataset.k===k));$$('#fqList li').forEach(li=>li.classList.toggle('open',+li.dataset.k===k));
     if(anim&&ans.firstChild){ans.firstChild.classList.add('out');setTimeout(()=>{ans.innerHTML=ansHTML(k)},250)}else ans.innerHTML=ansHTML(k)};
   const topic=i=>{ti=i;$$('#fqTabs button').forEach((b,j)=>b.setAttribute('aria-selected',j===i));const ks=faqTopics[i][1];
-    $('#fqList').innerHTML=ks.map((k,n)=>`<li data-k="${k}"><button type="button" data-k="${k}" aria-current="false"><span class="n">0${n+1}</span><span>${faqs[k][0]}</span><span class="ar" aria-hidden="true">→</span></button><div class="inl"><div><p>${faqs[k][1]}</p></div></div></li>`).join('');
+    /* The server puts every answer in the page (for search engines); show this topic's */
+    const items=$$('#fqList>li[data-t]');
+    if(items.length)items.forEach(li=>{li.hidden=+li.dataset.t!==i;li.classList.toggle('open',false);li.querySelector('button').setAttribute('aria-current','false')});
+    else $('#fqList').innerHTML=ks.map((k,n)=>`<li data-k="${k}"><button type="button" data-k="${k}" aria-current="false"><span class="n">0${n+1}</span><span>${faqs[k][0]}</span><span class="ar" aria-hidden="true">→</span></button><div class="inl"><div><p>${faqs[k][1]}</p></div></div></li>`).join('');
     const mob=innerWidth<=860;if(mob){qi=null;ans.innerHTML=''}else pick(ks[0],true)};
   $('#fqTabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)topic(+b.dataset.t)});
   $('#fqList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=+b.dataset.k;
