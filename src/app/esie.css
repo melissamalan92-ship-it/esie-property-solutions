@@ -1178,3 +1178,17 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 
 /* Services cards and FAQ answers are all in the page for search engines; only the chosen ones show */
 #pkCard>.pk-in[hidden],#fqList>li[hidden]{display:none}
+/* Guide pages (/guides): the privacy page's reading layout, with numbered steps, links and a related-guides list */
+.gd .pv-body ol{padding-left:1.3em;list-style:decimal}
+.gd .pv-body ol li{padding-left:.3em}
+.gd-link{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;transition:text-decoration-color .3s}
+.gd-link:hover{text-decoration-color:var(--sage)}
+.gd-fine{margin-top:48px!important;font-size:.8125rem}
+.gd-more{margin-top:72px;padding-top:32px;border-top:1px solid var(--line);display:grid;gap:18px}
+.gd-more ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px 30px}
+.gd-list h2 a{text-decoration:none}
+.crumbs a{color:inherit}
+/* "Read the guide" inside a service card (dark panel) */
+.pk-in .link-line{color:var(--on-dk);justify-self:start;margin-top:6px}
+/* Footer with a Guides column */
+@media (min-width:761px){.ft{grid-template-columns:1.5fr 1fr 1.2fr 1fr}}

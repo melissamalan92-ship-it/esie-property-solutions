@@ -25,8 +25,10 @@ if (!same(jsServices, grab(ts, "services"))) problems.push("services differ betw
 if (!same(grab(js, "faqs"), grab(ts, "faqs"))) problems.push("FAQ answers differ between public/esie.js and src/app/esie-content.ts");
 if (!same(grab(js, "faqTopics"), grab(ts, "faqTopics"))) problems.push("FAQ topics differ between public/esie.js and src/app/esie-content.ts");
 
+if (!same(grab(js, "areas"), grab(ts, "areas"))) problems.push("Explore areas differ between public/esie.js and src/app/esie-content.ts");
+
 if (problems.length) {
   console.error("check-content failed:\n- " + problems.join("\n- "));
   process.exit(1);
 }
-console.log("check-content: services and FAQ match in both places");
+console.log("check-content: services, FAQ and Explore areas match in both places");

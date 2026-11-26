@@ -66,7 +66,7 @@ $$('[data-bento]').forEach(el=>{const full=el.dataset.bento==='full';
 $$('[data-steps]').forEach(el=>el.insertAdjacentHTML('beforeend',steps.map((s,i)=>`<div class="stp${i===0?' on':''}"><span class="k">Step 0${i+1}</span><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('')));
 if($('[data-mini]'))$('[data-mini]').innerHTML=steps.map((s,i)=>`<div><span class="n">0${i+1}</span><h4>${s[0]}</h4></div>`).join('');
 $$('[data-why]').forEach(el=>el.innerHTML=why.map(w=>`<div><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join(''));
-if($('#chapters'))$('#chapters').innerHTML=areas.map((a,i)=>`<article class="chap${i%2?' rev':''}"><div class="wrap cgrid">
+if($('#chapters')&&!$('#chapters').children.length)$('#chapters').innerHTML=areas.map((a,i)=>`<article class="chap${i%2?' rev':''}"><div class="wrap cgrid">
  <div class="big"><div class="frame" data-par="0.07"><img src="${IMG[a.img]}" alt="${a.name}" loading="lazy"></div></div>
  <div class="small"><div class="frame" data-par="0.12"><img src="${IMG[a.img2]}" alt="" loading="lazy"></div></div>
  <div class="ctext"><div class="ttl"><div class="meta"><b>${a.region}</b><span class="tab">${a.coord}</span></div><h2>${a.name}</h2></div>
@@ -339,7 +339,7 @@ function render(v){
   $$(`[data-view="${v}"] .ln>span, [data-view="${v}"] .fade-up`).forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation=''});
   current=v;scrollTo(0,0);measure();tick();armReveal();if(v==='home'&&typeof sizeCv==='function')setTimeout(sizeCv,30);if(v==='contact')setTimeout(placeCtLogo,40);$('.fcta').hidden=(v!=='home');if(v==='explore'){if(pendingPlace!==null){show(pendingPlace);pendingPlace=null}else start=performance.now();setTimeout(placeSpots,50)}
 }
-function go(){let v=location.pathname.replace(/\/+$/,'').slice(1)||'home';if(!views.includes(v))v='home';closeMenu();
+function go(){let v=location.pathname.replace(/\/+$/,'').slice(1)||'home';if(!views.includes(v)){const own=document.querySelector('.view[data-view]');v=own?own.dataset.view:'home'}closeMenu();
   if(current===null||reduce){render(v);return}
   if(v===current){scrollTo({top:0,behavior:'smooth'});return}
   if(busy)return;busy=true;curtain.className='curtain in';
@@ -349,8 +349,8 @@ function go(){let v=location.pathname.replace(/\/+$/,'').slice(1)||'home';if(!vi
 const inDom=v=>!!document.querySelector('.view[data-view="'+v+'"]');
 function hardGo(p){if(reduce){location.assign(p);return}if(busy)return;busy=true;closeMenu();curtain.className='curtain in';
   setTimeout(()=>{try{sessionStorage.setItem('esie-curtain','1')}catch(e){}location.assign(p)},720)}
-document.addEventListener('click',e=>{const a=e.target.closest('a[href^="/"]');if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target)return;const p=a.getAttribute('href'),t=p==='/'?'home':p.slice(1);if(!views.includes(t))return;e.preventDefault();if(!inDom(t)){if(location.pathname!==p)hardGo(p);else scrollTo({top:0,behavior:'smooth'});return}if(location.pathname!==p)history.pushState(null,'',p);go()});
-addEventListener('popstate',()=>{const v=location.pathname.replace(/\/+$/,'').slice(1)||'home';if(views.includes(v)&&!inDom(v)){location.reload();return}go()});
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="/"]');if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target)return;const p=a.getAttribute('href'),t=p==='/'?'home':p.slice(1);if(!views.includes(t)&&!/^guides(\/|$)/.test(t))return;e.preventDefault();if(!inDom(t)){if(location.pathname!==p)hardGo(p);else scrollTo({top:0,behavior:'smooth'});return}if(location.pathname!==p)history.pushState(null,'',p);go()});
+addEventListener('popstate',()=>{const v=location.pathname.replace(/\/+$/,'').slice(1)||'home';if(!inDom(v)){location.reload();return}go()});
 /* Arriving behind the curtain from another page: lift it */
 if(document.documentElement.classList.contains('curtain-cover')){setTimeout(()=>{curtain.className='curtain out';document.documentElement.classList.remove('curtain-cover');setTimeout(()=>{curtain.className='curtain'},850)},60)}
 /* Coming back to a page kept in the browser's memory: make sure the curtain is up */

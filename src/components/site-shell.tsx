@@ -3,6 +3,8 @@
 // Plain <a> links on purpose: public/esie.js handles page changes (with the curtain transition).
 /* eslint-disable @next/next/no-html-link-for-pages */
 
+import { guides } from "@/app/guides-content";
+
 const pages = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -144,6 +146,16 @@ export function Footer() {
               {pages.map((p) => (
                 <li key={p.href}>
                   <a href={p.href}>{p.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4>Guides</h4>
+            <ul>
+              {guides.map((g) => (
+                <li key={g.slug}>
+                  <a href={`/guides/${g.slug}`}>{g.short}</a>
                 </li>
               ))}
             </ul>
