@@ -1192,3 +1192,21 @@ footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:3p
 .pk-in .link-line{color:var(--on-dk);justify-self:start;margin-top:6px}
 /* Footer with a Guides column */
 @media (min-width:761px){.ft{grid-template-columns:1.5fr 1fr 1.2fr 1fr}}
+
+/* home: free guides to download */
+.gdl{background:var(--paper);padding-block:clamp(80px,9vw,130px)}
+.gdl-in{display:grid;grid-template-columns:1fr 2fr;gap:clamp(32px,5vw,80px);align-items:start}
+.gdl-head{display:grid;gap:18px}
+.gdl-head h2{font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.08;max-width:12ch}
+.gdl-head p{max-width:34ch}
+.gdl-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.5vw,36px)}
+.gdl-card{display:grid;grid-template-columns:minmax(0,42%) 1fr;gap:22px;align-items:start;color:var(--ink);text-decoration:none}
+.gdl-card img{display:block;width:100%;height:auto;box-shadow:0 18px 40px -22px #24211C;transition:transform .8s var(--ease)}
+.gdl-card:hover img{transform:translateY(-6px)}
+.gdl-txt{display:grid;gap:12px;align-content:start}
+.gdl-k{font:500 .6875rem/1.4 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--sage-2)}
+.gdl-txt h3{font-size:1.3rem;line-height:1.2}
+.gdl-txt p{color:var(--ink-soft);font-size:.9375rem;line-height:1.55;margin:0}
+.gdl-txt .link-line{justify-self:start;margin-top:4px}
+@media (max-width:1100px){.gdl-in{grid-template-columns:1fr}.gdl-head h2{max-width:none}}
+@media (max-width:700px){.gdl-cards{grid-template-columns:1fr}.gdl-card{grid-template-columns:120px 1fr}}
