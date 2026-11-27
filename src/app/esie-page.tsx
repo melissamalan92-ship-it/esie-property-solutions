@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { esieViews, type EsieView } from "./esie-markup";
 import { esieFaqSchema, esieSeo } from "./esie-seo";
+import { withPhotos } from "./esie-photos";
 import { withServerContent } from "./esie-server-content";
 
 export function esieMetadata(view: keyof typeof esieSeo): Metadata {
@@ -40,7 +41,7 @@ export function EsiePage({ view }: { view: EsieView }) {
       <div
         style={{ display: "contents" }}
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: withServerContent(view, esieViews[view]) }}
+        dangerouslySetInnerHTML={{ __html: withPhotos(withServerContent(view, esieViews[view])) }}
       />
       {view === "faq" && (
         <JsonLd

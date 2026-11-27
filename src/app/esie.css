@@ -6,8 +6,8 @@
   --sage:#5D5B45; --sage-2:#77745A; --sage-deep:#3F3E2D;
   --ink:#24211C; --ink-soft:#615B51; --line:rgba(36,33,28,.13);
   --on-sage:#EEEADD; --on-sage-dim:rgba(238,234,221,.74);
-  --display:"Urbanist","Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
-  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --display:var(--font-urbanist),var(--font-hanken),"Helvetica Neue",Arial,sans-serif;
+  --body:var(--font-hanken),"Helvetica Neue",Arial,sans-serif;
   --xl:clamp(2.3rem,4.8vw,4.4rem); --lg:clamp(1.8rem,3.2vw,2.9rem); --md:clamp(1.3rem,1.8vw,1.65rem);
   --ease:cubic-bezier(.19,1,.22,1); --ease2:cubic-bezier(.65,0,.35,1);
   --gut:max(24px,env(safe-area-inset-left,0px)); --gutR:max(24px,env(safe-area-inset-right,0px));
@@ -443,7 +443,7 @@ footer{background:var(--sage-deep);color:var(--on-sage)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.lit .w{opacity:1}}
 
 /* ====================== Kayuna-inspired layer ====================== */
-:root{--head:"Urbanist","Hanken Grotesk","Helvetica Neue",Arial,sans-serif;--dk:#37352A;--dk2:#2B2A21;--lt:#EEEBE4;--on-dk:#ECE8DD;--on-dk-dim:rgba(236,232,221,.62);--line-dk:rgba(236,232,221,.16)}
+:root{--head:var(--font-urbanist),var(--font-hanken),"Helvetica Neue",Arial,sans-serif;--dk:#37352A;--dk2:#2B2A21;--lt:#EEEBE4;--on-dk:#ECE8DD;--on-dk-dim:rgba(236,232,221,.62);--line-dk:rgba(236,232,221,.16)}
 body{background:var(--lt)}
 .view:not([data-view="explore"]) h1,.view:not([data-view="explore"]) h2,.view:not([data-view="explore"]) h3,.view:not([data-view="explore"]) h4,footer h2{font-family:var(--head);font-weight:300;letter-spacing:0}
 .view:not([data-view="explore"]) em{font-family:var(--display);font-weight:250;font-style:normal;letter-spacing:0}

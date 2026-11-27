@@ -83,7 +83,7 @@ export default function Page() {
               <p>
                 We use trusted providers to run this website and our email:
                 Netlify, for website hosting and our enquiry form, and Google,
-                for email and the fonts on this site. These providers may store
+                for email. These providers may store
                 or process information outside South Africa and outside your own
                 country. We only use providers that protect personal information
                 with appropriate safeguards, such as standard contractual

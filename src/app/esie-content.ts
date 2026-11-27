@@ -1,7 +1,6 @@
-// The words for the Services and FAQ pages, in one place.
-// The server puts all of it into each page, so search engines and AI tools can read every service and every answer;
-// public/esie.js only shows and hides it. public/esie.js still keeps its own copy for the home page:
-// scripts/check-content.mjs fails the build if the two ever differ.
+// The words for the services, the FAQ and the Explore areas: the only copy.
+// The server puts all of it into each page, so search engines and AI tools can read every service and every answer.
+// public/esie.js reads the same words from the page's data block (src/app/esie-data.tsx) for the home page and the Explore map.
 
 export type Service = { t: string; s: string; l: string[] };
 

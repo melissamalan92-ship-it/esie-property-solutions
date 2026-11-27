@@ -5,8 +5,14 @@ import {
   Footer,
   Header,
 } from "@/components/site-shell";
+import { Hanken_Grotesk, Urbanist } from "next/font/google";
 import "./esie.css";
 import { services } from "./esie-content";
+import { EsieData } from "./esie-data";
+
+// Fonts are downloaded at build time and served from the site itself: faster, and visitors' browsers never contact Google.
+const urbanist = Urbanist({ subsets: ["latin"], weight: ["200", "300", "400", "500"], variable: "--font-urbanist", display: "swap" });
+const hanken = Hanken_Grotesk({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--font-hanken", display: "swap" });
 
 const description =
   "ESIE Property Solutions in Cape Town helps international buyers purchase property in South Africa, coordinating property, financial, legal and tax services.";
@@ -67,7 +73,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${urbanist.variable} ${hanken.variable}`} suppressHydrationWarning>
       <head>
         {/* Keeps the page curtain down while a page loads after a curtain transition. */}
         <script
@@ -75,17 +81,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html:
               "try{if(sessionStorage.getItem('esie-curtain')){sessionStorage.removeItem('esie-curtain');document.documentElement.classList.add('curtain-cover')}}catch(e){}",
           }}
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Urbanist:wght@200;300;400;500&display=swap"
         />
       </head>
       <body suppressHydrationWarning>
@@ -100,6 +95,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <EsieData />
       </body>
     </html>
   );

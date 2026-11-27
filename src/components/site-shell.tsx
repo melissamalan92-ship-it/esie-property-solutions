@@ -2,6 +2,7 @@
 // Class names and ids are what public/esie.js and esie.css hook into, so keep them stable.
 // Plain <a> links on purpose: public/esie.js handles page changes (with the curtain transition).
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { photo } from "@/app/esie-photos";
 
 import { guides } from "@/app/guides-content";
 
@@ -109,10 +110,10 @@ export function Footer() {
     <footer>
       <div className="fcta">
         <div className="fimg">
-          {/* Placeholder photo; moves to next/image when the real photos arrive. */}
+          {/* Plain <img> (not next/image) because public/esie.js hooks into it; photo() still optimises it. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/vinepool.jpg"
+            src={photo("vinepool")}
             data-img="vinepool"
             alt="Sun loungers beside a pool overlooking vineyards in the Cape Winelands"
             loading="lazy"
